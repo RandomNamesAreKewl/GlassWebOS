@@ -1,9 +1,18 @@
 var PersistantData = {
-    Apps: {}
+    Apps: {
+        "apps/extensionmanager.js": "Extension Manager"
+    },
+    Extensions: [
+        "clock.js"
+    ]
 };
 if(document.cookie.split(";").some(item => item.startsWith("persistantdata="))) {
     PersistantData = JSON.parse(document.cookie.split(";").find(item => item.startsWith("persistantdata=")).split("=")[1]);
 }
+if(!("Apps" in PersistantData))
+    PersistantData.Apps = {};
+if(!("Extensions" in PersistantData))
+    PersistantData.Extensions = ["clock.js"];
 RegisterApp("Command Prompt", "apps/commandprompt.js")
 
 window.addEventListener("unload", _ => {
@@ -78,3 +87,15 @@ function RegisterApp(name, location) {
 }
 
 LoadApplication("apps/appcorner.js");
+
+function LoadExtension(location) {
+    fetch(location).then(res => res.text()).then(extension => {
+        Function(extension)();
+    });
+}
+
+document.addEventListener("DOMContentLoaded", _ => {
+    for(var i=0; i<PersistantData.Extensions.length; i++) {
+        LoadExtension(PersistantData.Extensions[i]);
+    }
+});
