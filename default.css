@@ -10,6 +10,8 @@
 body {
     overflow: hidden;
     height: 100vh;
+    padding: 0;
+    margin: 0;
 
     /* No support for Safari 4-5 or Chrome 1-9 because I value my sanity */
     background: radial-gradient(ellipse at top, #1b1b30, #131313);
