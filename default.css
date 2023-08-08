@@ -1,0 +1,182 @@
+/* ROUND OS LES GOOOOO */
+/** {
+    border-radius: 100% !important;
+}*/
+
+:root {
+    font-family: sans-serif;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+
+    /* No support for Safari 4-5 or Chrome 1-9 because I value my sanity */
+    background: radial-gradient(ellipse at top, #1b1b30, #131313);
+    background: -moz-radial-gradient(ellipse at top, #1b1b30, #131313);
+    background: -webkit-radial-gradient(ellipse at top, #1b1b30, #131313);
+    background: -ms-radial-gradient(ellipse at top, #1b1b30, #131313);
+}
+
+#taskbar {
+    display: flex;
+    gap: 0.5em;
+    position: absolute;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border-width: 0.125em;
+    border-color: #ffffff6b;
+    border-style: solid;
+    background-color: #ffffff6b;
+    backdrop-filter: blur(5em);
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#topbar {
+    position: absolute;
+    display: flex;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.0625em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-radius: 1em;
+    border-width: 0.125em;
+    border-color: #ffffff6b;
+    border-style: solid;
+
+    background-color: #ffffff6b;
+    backdrop-filter: blur(5em);
+}
+
+.appicon {
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    border-radius: 0.25em;
+
+    /* Still no support for Safari 4-5 or Chrome 1-9 because I still value my sanity */
+    background: radial-gradient(circle at top left, #2f00b1, #260052);
+    background: -moz-radial-gradient(circle at top left, #2f00b1, #260052);
+    background: -webkit-radial-gradient(circle at top left, #2f00b1, #260052);
+    background: -ms-radial-gradient(circle at top left, #2f00b1, #260052);
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    width: 70vh;
+    height: 50vh;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border-width: 0.125em;
+    border-color: #ffffff6b;
+    border-style: solid;
+    background-color: #ffffff6b;
+    resize: both;
+    backdrop-filter: blur(5em);
+}
+
+.window > .titlebar {
+    border-color: #ffffff6b;
+    border-bottom-style: solid;
+    border-bottom-width: 0.125em;
+    margin-bottom: 0.25em;
+    user-select: none;
+    -moz-user-select: none;
+    height: 2.15em;
+}
+
+.window > .content {
+    flex-grow: 1;
+}
+
+.window > .flexcontent {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.rightborder {
+    padding-right: 0.25em;
+    margin-right: 0.25em;
+    border-right-style: solid;
+    border-right-width: 0.125em;
+    border-right-color: #ffffff6b;
+}
+
+button {
+    border-color: #ffffff6b;
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 0.25em;
+    margin: 0.125em;
+    padding: 0.25em;
+    transition-property: background-color;
+    transition-duration: 0.25s;
+}
+
+button:hover {
+    background-color: #ffffff41;
+}
+
+button:active {
+    background-color: #ffffff6b;
+}
+
+button.close {
+    position: relative;
+    float: right;
+    top: -0.25em;
+    width: 2em;
+    color: red;
+    border-color: red;
+    font-weight: bold;
+}
+
+.listview {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    border-radius: 0.5em;
+    border-width: 0.125em;
+    border-style: solid;
+    border-color: #ffffff6b;
+    padding: 0.25em;
+}
+
+input {
+    border-color: #ffffff6b;
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 0.25em;
+    margin: 0.125em;
+    padding: 0.25em;
+    transition-property: background-color;
+    transition-duration: 0.25s;
+}
+
+input:focus {
+    background-color: #ffffff6b;
+}
+
+.terminal-output {
+    font-family: monospace;
+    background-color: #000000AA;
+    border-radius: 0.25em;
+    color: white;
+    padding: 0.25em;
+    overflow: scroll;
+}
+
+.terminal-input {
+    font-family: monospace;
+    background-color: #000000AA !important;
+    border-style: none;
+    color: white;
+}
